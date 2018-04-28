@@ -1,5 +1,8 @@
 module.exports = {
   plugins: ['~/plugins/vue2-google-maps'],
+  router: {
+    base: '/nuxt-test/'
+  },
   /*
   ** Headers of the page
   */
