@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['~/plugins/vue2-google-maps'],
   /*
   ** Headers of the page
   */
@@ -21,6 +22,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vender: ['vue2-google-maps'],
     /*
     ** Run ESLint on save
     */
@@ -31,6 +33,20 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
+        })
+      }
+      /*
+      ** vue2-google-maps
+      */
+      if (!isClient) {
+        // This instructs Webpack to include `vue2-google-maps`'s Vue files
+        // for server-side rendering
+        config.externals.splice(0, 0, function (context, request, callback) {
+          if (/^vue2-google-maps($|\/)/.test(request)) {
+            callback(null, false)
+          } else {
+            callback()
+          }
         })
       }
     }
