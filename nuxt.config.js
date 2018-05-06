@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' }
     ]
   },
   /*
@@ -26,6 +27,7 @@ module.exports = {
   */
   build: {
     vender: ['vue2-google-maps'],
+    extractCSS: true,
     /*
     ** Run ESLint on save
     */

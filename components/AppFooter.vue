@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
-    <span>H</span>
-    <span>S</span>
-    <span>U</span>
-    <span>E</span>
-    <span>S</span>
+    <i class="fas fa-home"></i>
+    <i class="fab fa-sistrix"></i>
+    <i class="fas fa-plus-circle"></i>
+    <i class="far fa-heart"></i>
+    <i class="far fa-user"></i>
   </div>
 </template>
 
@@ -22,11 +22,11 @@
   border-top: 1px solid #cfcfcf;
   align-items: center;
 }
-span {
+i {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   font-size: 1em;
-  padding: 8px 0;
+  padding: 12px 0;
   color: #35495e;
   letter-spacing: 1px;
   justify-self: center;

@@ -2,11 +2,10 @@
   <section class="container">
     <app-header />
     <div class="tile">
-      <img class="item" src="https://picsum.photos/200?random" alt="image"/>
-      <img class="item" src="https://picsum.photos/200?random" alt="image"/>
-      <img class="item" src="https://picsum.photos/200?random" alt="image"/>
-      <img class="item" src="https://picsum.photos/200?random" alt="image"/>
-      <img class="item" src="https://picsum.photos/200?random" alt="image"/>
+      <img v-for="list in lists"
+        :key="list.id"
+        class="item"
+        :src="list.url" />
     </div>
     <app-footer />
   </section>
@@ -16,8 +15,13 @@
 import AppLogo from '~/components/AppLogo.vue'
 import AppHeader from '~/components/AppHeader.vue'
 import AppFooter from '~/components/AppFooter.vue'
+import lists from '~/static/data.json'
 
 export default {
+  data () {
+    return { lists }
+  },
+
   components: {
     AppLogo,
     AppHeader,
@@ -32,9 +36,6 @@ export default {
   padding: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .tile {
@@ -44,7 +45,7 @@ export default {
   grid-auto-flow: row;
   align-content: start;
   width: 100vw;
-  margin: 46px 0 0;
+  margin: 50px 0 0; /* header hight */
   background: #fff;
 }
 .item {
